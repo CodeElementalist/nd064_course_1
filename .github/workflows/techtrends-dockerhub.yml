@@ -28,7 +28,7 @@ jobs:
                 name: Build and push
                 uses: docker/build-push-action@v4
                 with:
-                    context: https://github.com/CodeElementalist/nd064_course_1/tree/main/project/techtrends
-                    file: https://github.com/CodeElementalist/nd064_course_1/tree/main/project/Dockerfile
+                    context: ./project/techtrends
+                    file: ./project/Dockerfile
                     push: true
                     tags: laikhimsoon/techtrends:latest
