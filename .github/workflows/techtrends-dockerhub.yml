@@ -32,7 +32,7 @@ jobs:
                 name: Build and push
                 uses: docker/build-push-action@v4
                 with:
-                    context: project/techtrends
-                    file: project/Dockerfile
+                    context: ./project/techtrends
+                    file: ./project/Dockerfile
                     push: true
                     tags: laikhimsoon/techtrends:latest
