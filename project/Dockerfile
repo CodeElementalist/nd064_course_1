@@ -2,7 +2,7 @@ FROM python:3.8
 
 WORKDIR /app
 
-ADD project/techtrends .
+COPY project/techtrends .
 
 RUN pip install -r requirements.txt
 
