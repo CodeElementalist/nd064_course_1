@@ -26,8 +26,8 @@ containerPort: 3111
 
 livenessProbe:
   path: /healthz
-  port: {{containerPort}}
+  port: {{.Value.containerPort}}
 
 readinessProbe:
   path: /healthz
-  port: {{containerPort}}
+  port: {{.Value.containerPort}}
