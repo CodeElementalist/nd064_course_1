@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     helm:
-     valueFiles:
-     - values-prod.yaml
+      valueFiles:
+      - values-prod.yaml
     path: project/helm
     repoURL: https://github.com/CodeElementalist/nd064_course_1
     targetRevision: HEAD
