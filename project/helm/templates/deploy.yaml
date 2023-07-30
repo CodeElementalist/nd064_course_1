@@ -5,9 +5,9 @@ metadata:
   labels:
     app: techtrends
   name: techtrends
-  namespace: {{.Value.namespace.name}}
+  namespace: {{.Values.namespace.name}}
 spec:
-  replicas: {{.Value.replicaCount}}
+  replicas: {{.Values.replicaCount}}
   selector:
     matchLabels:
       app: techtrends
@@ -19,19 +19,19 @@ spec:
         app: techtrends
     spec:
       containers:
-      - image: {{.Value.image.repository}}:{{.Value.image.tag}}
-        imagePullPolicy: {{.Value.image.pullPolicy}}
+      - image: {{.Values.image.repository}}:{{.Values.image.tag}}
+        imagePullPolicy: {{.Values.image.pullPolicy}}
         name: techtrends
         ports:
-        - containerPort: {{.Value.containerPort}}
+        - containerPort: {{.Values.containerPort}}
         livenessProbe:
           httpGet:
-            path: {{.Value.livenessProbe.path}}
-            port: {{.Value.livenessProbe.port}} 
+            path: {{.Values.livenessProbe.path}}
+            port: {{.Values.livenessProbe.port}} 
         readinessProbe:
           httpGet:
-            path: {{.Value.readinessProbe.path}}
-            port: {{.Value.readinessProbe.port}}
+            path: {{.Values.readinessProbe.path}}
+            port: {{.Values.readinessProbe.port}}
         resources:
-{{toYaml .Value.resources | indent 12}}
+{{toYaml .Values.resources | indent 12}}
 status: {}
