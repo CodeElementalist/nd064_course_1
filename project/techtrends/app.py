@@ -23,7 +23,6 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                               (post_id,)).fetchone()
     connection.close()
-    db_connection_count[0] -= 1
     return post
 
 
@@ -38,7 +37,6 @@ def index():
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
-    db_connection_count[0] -= 1
     return render_template('index.html', posts=posts)
 
 
@@ -48,9 +46,10 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-        app.logger.info('Request unsuccessful!')
+        app.logger.info('Request for post unsuccessful!')
         return render_template('404.html'), 404
     else:
+        app.logger.info('Request for post successful!')
         return render_template('post.html', post=post)
 
 
@@ -69,7 +68,7 @@ def create():
         content = request.form['content']
 
         if not title:
-            app.logger.info(f"Article's title missing. Post unsuccessful!")
+            app.logger.info(f"Article's title missing. Post creation unsuccessful!")
             flash('Title is required!')
         else:
             connection = get_db_connection()
@@ -78,7 +77,6 @@ def create():
                         (title, content))
             connection.commit()
             connection.close()
-            db_connection_count[0] -= 1
 
             app.logger.info(f'Article "{title}" posted successful!')
             return redirect(url_for('index'))
@@ -110,7 +108,6 @@ def metrics():
             mimetype='application/json'
     )
     connection.close()
-    db_connection_count[0] -= 1
     app.logger.info('Request for matrics successful!')
     return response
 
