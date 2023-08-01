@@ -13,7 +13,7 @@ docker run -d -p 7111:3111 techtrends
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
 
-docker container exec -i ac0061406193a98d7cdb6a06a49f0c3493d469c4553decf0409ebadcaa2ee46a cat "//app/app.log"
+docker container exec -i 9ab5ca2e78ae56fc60ec84373a6712b4625fbb59de35b74ab73dfcd67b3b4cea cat "//app/app.log"
 
 
 ## Logs from the container running the TechTrends application
@@ -27,15 +27,31 @@ INFO:werkzeug:Press CTRL+C to quit
 WARNING:werkzeug: * Running on all addresses.
    WARNING: This is a development server. Do not use it in a production deployment.
 INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:38:40] "GET / HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:38:42] "GET /static/css/main.css HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:38:42] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:08:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:08:32] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:08:33] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:08:55] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:09:15] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Request for post successful!
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:09:36] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:09:36] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Request for post unsuccessful!
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:09:51] "GET /7 HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:09:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:01] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:01] "GET /static/css/main.css HTTP/1.1" 304 -
 INFO:app:Request for "About Us" page successful!
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:38:48] "GET /about HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:38:48] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:10] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:10] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:21] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:21] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Article "Test" posted successful!
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:36] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:36] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:10:36] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Request for healthcheck successful!
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:11:38] "GET /healthz HTTP/1.1" 200 -
 INFO:app:Request for matrics successful!
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:39:03] "GET /metrics HTTP/1.1" 200 -
-INFO:werkzeug:172.17.0.1 - - [30/May/2023 05:39:09] "GET /metric HTTP/1.1" 404 -
-WARNING:werkzeug: * Running on all addresses.
-   WARNING: This is a development server. Do not use it in a production deployment.
-INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:12:05] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:12:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [01/Aug/2023 02:12:19] "GET /static/css/main.css HTTP/1.1" 304 -
